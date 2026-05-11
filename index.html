@@ -252,11 +252,11 @@
   /* CANONICAL FIX: "The Teaching" label with bottom border */
   .section-label {
     font-family: 'Inter', sans-serif;
+    font-weight: 600;
     font-size: 10px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    font-weight: 500;
+    color: var(--cyan);
     margin-bottom: 16px;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--card-border);
@@ -795,16 +795,14 @@
     <textarea class="reflection-textarea" id="response-1" placeholder="I am so grateful that I..."></textarea>
   </div>
 
-  <!-- NAV BUTTONS — Back + Next Part only -->
+  <!-- NAV BUTTONS — Back on left, Copy on right (appears on last part) -->
   <div class="nav-buttons">
     <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>Back</button>
     <button class="nav-btn primary" id="nextBtn" onclick="navigate(1)">Next Part</button>
-  </div>
-
-  <!-- COPY MY RESPONSES — own row, feedback sits directly beneath -->
-  <div id="copyWrap" style="display:none; margin-top:18px;">
-    <button class="nav-btn primary" id="copyBtn" onclick="copyResponses()">Copy My Responses</button>
-    <div class="copy-feedback-inline" id="copyFeedback">✓ Copied to clipboard</div>
+    <div id="copyWrap" style="display:none; flex-direction:column; align-items:flex-end; gap:8px;">
+      <button class="nav-btn primary" id="copyBtn" onclick="copyResponses()">Copy My Responses</button>
+      <div class="copy-feedback-inline" id="copyFeedback">✓ Copied to clipboard</div>
+    </div>
   </div>
 
   <!-- SAVE YOUR WORK CARD — no button inside -->
@@ -836,7 +834,8 @@
     current = index;
     document.getElementById('card-' + current).classList.add('active');
     updateUI();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const activeCard = document.getElementById('card-' + current);
+    if (activeCard) activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function navigate(dir) { goToSection(current + dir); }
@@ -864,7 +863,7 @@
     const copyWrap = document.getElementById('copyWrap');
     if (current === totalSections - 1) {
       nextBtn.style.display = 'none';
-      copyWrap.style.display = 'block';
+      copyWrap.style.display = 'flex';
     } else {
       nextBtn.style.display = '';
       copyWrap.style.display = 'none';
