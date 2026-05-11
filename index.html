@@ -13,19 +13,15 @@
     --magenta: #f62bd1;
     --purple: #8051c8;
     --amber: #f4a749;
-
     --bg: #0a0a1f;
     --mid: #15122e;
     --card-bg: rgba(30,26,62,0.6);
     --card-border: rgba(255,255,255,0.08);
     --card-border-glow: rgba(28,214,231,0.35);
-
     --text-primary: #f8f5ff;
     --text-secondary: rgba(248,245,255,0.72);
     --text-muted: rgba(248,245,255,0.38);
-
     --gradient: linear-gradient(135deg, #1cd6e7, #8051c8, #f62bd1);
-    --phase-color: var(--cyan);
   }
 
   html { font-size: 16px; }
@@ -81,7 +77,9 @@
     z-index: 1;
   }
 
-  /* INTENTION BLOCK */
+  /* =====================================================
+     INTENTION BLOCK — full-width at top
+  ===================================================== */
   .intention-block {
     width: 100%;
     padding: 32px 32px 28px;
@@ -130,7 +128,9 @@
     text-transform: uppercase;
   }
 
-  /* PROGRESS BAR */
+  /* =====================================================
+     PROGRESS BAR
+  ===================================================== */
   .progress-wrap {
     padding: 32px 0 0;
     position: relative;
@@ -174,7 +174,9 @@
     transition: width 0.6s ease;
   }
 
-  /* STEP HEADER */
+  /* =====================================================
+     STEP HEADER
+  ===================================================== */
   .step-header {
     padding: 36px 0 28px;
     border-bottom: 1px solid var(--card-border);
@@ -190,6 +192,7 @@
     margin-bottom: 14px;
   }
 
+  /* CANONICAL FIX: consistent step badge */
   .step-badge {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
@@ -220,6 +223,15 @@
     margin-bottom: 12px;
   }
 
+  .gradient-word {
+    font-style: italic;
+    background: linear-gradient(135deg, #1cd6e7, #b893f2, #f62bd1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline;
+  }
+
   .step-subtitle {
     font-family: 'Inter', sans-serif;
     font-size: 13px;
@@ -228,71 +240,16 @@
     letter-spacing: 0.04em;
   }
 
-  /* FRAMEWORK INTRO */
-  .framework-intro {
-    background: var(--card-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    padding: 24px 26px;
-    margin-bottom: 32px;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.2s, border-color 0.2s;
-  }
-
-  .framework-intro:hover {
-    transform: translateY(-3px);
-    border-color: var(--card-border-glow);
-    box-shadow: 0 0 30px rgba(28,214,231,0.12), 0 0 60px rgba(28,214,231,0.06);
-  }
-
-  .framework-intro-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--cyan);
-    font-weight: 500;
-    margin-bottom: 12px;
-  }
-
-  .framework-intro-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.75;
-  }
-
-  .framework-phases {
-    display: flex;
-    gap: 8px;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
-
-  .phase-chip {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 99px;
-    border: 1px solid;
-  }
-
-  .phase-chip.selection { color: var(--cyan); border-color: rgba(28,214,231,0.3); background: rgba(28,214,231,0.08); }
-  .phase-chip.activation { color: var(--magenta); border-color: rgba(246,43,209,0.3); background: rgba(246,43,209,0.08); }
-  .phase-chip.stabilization { color: var(--purple); border-color: rgba(128,81,200,0.3); background: rgba(128,81,200,0.08); }
-
-  /* TEACHING COPY */
+  /* =====================================================
+     TEACHING COPY
+  ===================================================== */
   .teaching-section {
     margin-bottom: 32px;
     position: relative;
     z-index: 1;
   }
 
+  /* CANONICAL FIX: "The Teaching" label with bottom border */
   .section-label {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
@@ -315,7 +272,7 @@
 
   .teaching-copy p + p { margin-top: 16px; }
 
-  /* CALLOUT */
+  /* AMBER callout — exactly as original */
   .callout {
     background: rgba(244,167,73,0.10);
     border: 1px solid rgba(244,167,73,0.3);
@@ -334,7 +291,10 @@
     font-weight: 600;
   }
 
-  /* SOMATIC BLOCK */
+  /* =====================================================
+     SOMATIC / BEFORE YOU WRITE BLOCK
+     with animated breathing circle
+  ===================================================== */
   .somatic-block {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
@@ -399,7 +359,9 @@
     margin: 0 auto;
   }
 
-  /* STEP NAVIGATOR */
+  /* =====================================================
+     REFLECTION NAVIGATOR — dots + counter
+  ===================================================== */
   .step-nav-header {
     display: flex;
     align-items: center;
@@ -441,10 +403,11 @@
     font-size: 11px;
     color: rgba(248,245,255,0.6);
     letter-spacing: 0.06em;
-    transition: color 0.3s;
   }
 
-  /* REFLECTION CARDS */
+  /* =====================================================
+     REFLECTION CARDS — cyan left border, original style
+  ===================================================== */
   .reflection-card {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
@@ -504,7 +467,7 @@
     border: none;
     border-top: 1px solid transparent;
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.8;
     background: transparent;
@@ -523,25 +486,9 @@
     font-style: normal;
   }
 
-  /* SAVE NOTICE */
-  .save-notice {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 24px;
-    background: rgba(255,255,255,0.03);
-    border-top: 1px solid var(--card-border);
-  }
-
-  .save-notice-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 0.04em;
-    line-height: 1.5;
-  }
-
-  /* NAV BUTTONS */
+  /* =====================================================
+     NAV BUTTONS
+  ===================================================== */
   .nav-buttons {
     display: flex;
     justify-content: space-between;
@@ -579,22 +526,28 @@
   .nav-btn.primary:hover { opacity: 0.85; }
   .nav-btn:disabled { opacity: 0.25; cursor: default; }
 
-  .complete-badge {
-    display: none;
-    align-items: center;
-    gap: 8px;
+  /* CANONICAL FIX: copy feedback */
+  .copy-feedback-inline {
+    text-align: left;
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     color: var(--cyan);
+    letter-spacing: 0.10em;
     font-weight: 600;
-    letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-top: 10px;
+    min-height: 18px;
+    position: relative;
+    z-index: 1;
   }
 
-  .complete-badge.show { display: inline-flex; }
+  .copy-feedback-inline.show { opacity: 1; }
 
-  /* EXPORT SECTION */
+  /* =====================================================
+     SAVE YOUR WORK CARD
+  ===================================================== */
   .export-section {
     margin-top: 52px;
     padding: 28px 26px;
@@ -618,40 +571,24 @@
     font-family: 'Inter', sans-serif;
     font-size: 12px;
     color: var(--text-muted);
-    margin-bottom: 20px;
     letter-spacing: 0.03em;
+    line-height: 1.7;
   }
 
-  .export-buttons {
+  /* =====================================================
+     CANONICAL FIX: footer button stack
+     Go to Next Step (gradient) + Take Me Back to Skool (frosted)
+  ===================================================== */
+  .footer-stack {
+    margin-top: 20px;
     display: flex;
+    flex-direction: column;
     gap: 12px;
-    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
   }
 
-  .export-btn {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 12px 24px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .export-btn.filled {
-    background: var(--gradient);
-    border: none;
-    color: #fff;
-  }
-
-  .export-btn.filled:hover { opacity: 0.85; }
-
-  .skool-btn {
+  .next-step-btn {
     display: block;
     width: 100%;
     text-align: center;
@@ -665,31 +602,34 @@
     padding: 18px 24px;
     border-radius: 30px;
     text-decoration: none;
-    margin-top: 20px;
     transition: opacity 0.2s;
-    position: relative;
-    z-index: 1;
   }
 
-  .skool-btn:hover { opacity: 0.85; }
+  .next-step-btn:hover { opacity: 0.85; }
 
-  .copy-feedback-inline {
+  .skool-btn {
+    display: block;
+    width: 100%;
     text-align: center;
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.6);
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    color: var(--cyan);
-    letter-spacing: 0.08em;
+    font-size: 13px;
     font-weight: 600;
-    opacity: 0;
-    transition: opacity 0.3s;
-    margin-top: 10px;
-    min-height: 18px;
-    position: relative;
-    z-index: 1;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.2s;
   }
 
-  .copy-feedback-inline.show { opacity: 1; }
+  .skool-btn:hover { background: rgba(255,255,255,0.09); border-color: #fff; }
 
+  /* =====================================================
+     COPYRIGHT
+  ===================================================== */
   .copyright {
     text-align: center;
     font-family: 'Inter', sans-serif;
@@ -698,355 +638,13 @@
     letter-spacing: 0.06em;
     margin-top: 40px;
     padding-bottom: 20px;
+    position: relative;
+    z-index: 1;
   }
 
-  /* TAP RIPPLE — mobile touch feedback */
-  .ripple {
-    position: fixed;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%) scale(0);
-    background: radial-gradient(circle, rgba(28,214,231,0.35) 0%, transparent 70%);
-    animation: tapRipple 0.5s ease-out forwards;
-  }
-
-  @keyframes tapRipple {
-    0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
-  }
-
-  @media (max-width: 600px) {
-    .export-buttons { flex-direction: column; }
-    .export-btn { justify-content: center; }
-    .intention-block { padding: 24px 20px; }
-    .container { padding: 0 16px; }
-    .step-title { font-size: 26px; }
-    .reflection-card-header { padding: 16px; }
-    .reflection-textarea { padding: 16px; min-height: 140px; }
-    .nav-btn { padding: 10px 16px; font-size: 10px; }
-    .framework-intro { padding: 18px; }
-    .somatic-block { padding: 22px 16px; }
-  }
-</style>
-</head>
-<body>
-
-<div class="mid-glow"></div>
-<div class="star-field" id="starField"></div>
-
-<!-- INTENTION BLOCK -->
-<div class="intention-block">
-  <div class="intention-eyebrow">Selection Phase · Step 1 of 7</div>
-  <div class="intention-text">I am willing to see my current reality clearly, without judgment, so I can choose what comes next.</div>
-  <div class="intention-sub">Set this intention before you begin</div>
-</div>
-
-<div class="container">
-
-  <!-- PROGRESS BAR -->
-  <div class="progress-wrap">
-    <div class="progress-meta">
-      <div class="progress-label">Selection Phase</div>
-      <div class="progress-count">Step 1 of 7</div>
-    </div>
-    <div class="progress-track">
-      <div class="progress-fill"></div>
-    </div>
-  </div>
-
-  <!-- STEP HEADER -->
-  <div class="step-header">
-    <div class="step-eyebrow">
-      <span class="step-badge">STEP 1</span>
-      <span class="step-phase-label">SELECTION PHASE</span>
-    </div>
-    <div class="step-title">Observe Your <em class="gradient-word">Current</em> Reality</div>
-    <div class="step-subtitle">See where you are before you choose where you are going</div>
-  </div>
-
-  <!-- TEACHING COPY -->
-  <div class="teaching-section">
-    <div class="section-label">The Teaching</div>
-    <div class="teaching-copy" id="teachingCopy">
-      <p>Before you can move into the reality you want, you need to get clear on the one you are currently in. Observation is where this begins. When you look honestly at your life right now, you can start to identify what is working and worth carrying forward, and what you are ready to leave behind.</p>
-      <p>The key to this step is neutrality. This is not an exercise in shame or regret. Think of yourself as stepping slightly outside your own life and taking a clear-eyed inventory, the way you would declutter a room. There is a keep pile and there is a release pile, and you approach both without drama.</p>
-
-      <div class="callout">
-        <strong>Remember:</strong> Emotional charge anchors you to a timeline. Neutrality is what creates the space to change. The more matter-of-fact you can be here, the more freedom you give yourself to move forward.
-      </div>
-
-      <p>Two phrases will guide your reflection in this step. For what you are releasing: <strong style="color:#a8f4f9">"I am no longer available for the timeline where I have been..."</strong> For what you are keeping and expanding: <strong style="color:#a8f4f9">"I am so grateful that I..."</strong> Use these as your anchors as you write.</p>
-
-      <p>If you feel stuck on the gratitude side, get specific and small. Clean water. A roof. A vehicle. Someone who loves you. Gratitude does not need to be grand to be real, and even the smallest acknowledgment of what is already good creates the energetic foundation for more.</p>
-    </div>
-  </div>
-
-  <!-- SOMATIC GROUNDING -->
-  <div class="somatic-block">
-    <div class="somatic-icon"><div class="somatic-icon-inner"></div></div>
-    <div class="somatic-label">Before You Write</div>
-    <div class="somatic-text">Take three slow breaths. Feel the weight of your body in your seat and your feet making contact with the floor. Let your shoulders drop. When you feel settled and present, move into the reflection below.</div>
-  </div>
-
-  <!-- REFLECTION NAVIGATOR -->
-  <div class="section-label">Your Reflection</div>
-
-  <div class="step-nav-header">
-    <div class="step-dots">
-      <div class="step-dot active" onclick="goToSection(0)"></div>
-      <div class="step-dot" onclick="goToSection(1)"></div>
-    </div>
-    <div class="section-counter" id="sectionCounter">Part 1 of 2</div>
-  </div>
-
-  <!-- REFLECTION CARD 1 -->
-  <div class="reflection-card active" id="card-0">
-    <div class="reflection-card-header">
-      <div class="reflection-type">Release</div>
-      <div class="reflection-prompt">I am no longer available for the timeline where I have been...</div>
-      <div class="reflection-hint">What don't you like about your current trajectory?</div>
-    </div>
-    <textarea class="reflection-textarea" id="response-0" placeholder="I am no longer available for the timeline where I have been..."></textarea>
-    <div class="save-notice">
-      <div class="save-notice-text">This page does not save your responses. Save when done or transfer to your favourite journal.</div>
-    </div>
-  </div>
-
-  <!-- REFLECTION CARD 2 -->
-  <div class="reflection-card" id="card-1">
-    <div class="reflection-card-header">
-      <div class="reflection-type">Gratitude</div>
-      <div class="reflection-prompt">I am so grateful that I...</div>
-      <div class="reflection-hint">List what is already good in your life, big or small. These are the things you want to carry forward and allow to grow. Be specific.</div>
-    </div>
-    <textarea class="reflection-textarea" id="response-1" placeholder="I am so grateful that I..."></textarea>
-    <div class="save-notice">
-      <div class="save-notice-text">This page does not save your responses. Save when done or transfer to your favourite journal.</div>
-    </div>
-  </div>
-
-  <!-- NAV BUTTONS -->
-  <div class="nav-buttons">
-    <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>Back</button>
-    <button class="nav-btn primary" id="nextBtn" onclick="navigate(1)">Next Part</button>
-    <button class="nav-btn primary" id="copyBtn" style="display:none;" onclick="copyResponses()">Copy My Responses</button>
-  </div>
-
-  <div class="copy-feedback-inline" id="copyFeedback">Copied to clipboard</div>
-
-  <!-- SAVE YOUR WORK CARD -->
-  <div class="export-section">
-    <div class="export-title">Save Your Work</div>
-    <div class="export-sub">Your responses are not saved automatically. Use the Copy My Responses button above to copy them, then paste into your notes app on your phone or computer.</div>
-  </div>
-
-  <!-- SKOOL BUTTON -->
-  <a href="https://www.skool.com/timeline-jumpers-9976/classroom" target="_blank" class="skool-btn">Take Me Back to Skool</a>
-
-  <!-- COPYRIGHT -->
-  <div class="copyright">© 2026 Ceyda Seren. All rights reserved.</div>
-
-</div>
-
-<script>
-  const totalSections = 2;
-  let current = 0;
-  const completed = new Set();
-
-  function goToSection(index) {
-    if (index < 0 || index >= totalSections) return;
-    const currentTA = document.getElementById('response-' + current);
-    if (currentTA && currentTA.value.trim().length > 0) completed.add(current);
-    document.getElementById('card-' + current).classList.remove('active');
-    current = index;
-    document.getElementById('card-' + current).classList.add('active');
-    updateUI();
-  }
-
-  function navigate(dir) { goToSection(current + dir); }
-
-  function updateUI() {
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const counter = document.getElementById('sectionCounter');
-    const dots = document.querySelectorAll('.step-dot');
-
-    prevBtn.disabled = current === 0;
-    counter.textContent = 'Part ' + (current + 1) + ' of ' + totalSections;
-
-    dots.forEach((dot, i) => {
-      dot.classList.remove('active', 'done');
-      if (i === current) dot.classList.add('active');
-      else if (completed.has(i)) dot.classList.add('done');
-    });
-
-    if (current === totalSections - 1) {
-      nextBtn.style.display = 'none';
-      copyBtn.style.display = '';
-    } else {
-      nextBtn.textContent = 'Next Part';
-      nextBtn.style.display = '';
-      nextBtn.onclick = () => navigate(1);
-      copyBtn.style.display = 'none';
-    }
-  }
-
-  function copyResponses() {
-    const labels = [
-      'RELEASE — I am no longer available for the timeline where I have been...',
-      'GRATITUDE — I am so grateful that I...'
-    ];
-
-    let text = 'TIMELINE JUMPERS — Step 1: Observe Your Current Reality\n';
-    text += '='.repeat(55) + '\n\n';
-
-    for (let i = 0; i < totalSections; i++) {
-      const val = document.getElementById('response-' + i)?.value?.trim();
-      if (val) text += labels[i] + '\n\n' + val + '\n\n' + '-'.repeat(40) + '\n\n';
-    }
-
-    if (text.length < 100) text += '(No responses recorded yet)';
-
-    const fb = document.getElementById('copyFeedback');
-
-    navigator.clipboard.writeText(text).then(() => {
-      fb.classList.add('show');
-      setTimeout(() => fb.classList.remove('show'), 2500);
-    }).catch(() => {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      fb.classList.add('show');
-      setTimeout(() => fb.classList.remove('show'), 2500);
-    });
-  }
-  // TWINKLING BACKGROUND STARS
-  const starField = document.getElementById('starField');
-  const starCount = 120;
-
-  for (let i = 0; i < starCount; i++) {
-    const star = document.createElement('div');
-    star.classList.add('twinkle-star');
-    const size = Math.random() * 2 + 0.5;
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    const duration = (Math.random() * 4 + 2).toFixed(2);
-    const delay = (Math.random() * 6).toFixed(2);
-    const maxOpacity = (Math.random() * 0.5 + 0.2).toFixed(2);
-
-    // occasional slightly larger bright stars
-    const isBright = Math.random() > 0.88;
-    const finalSize = isBright ? size * 2.5 : size;
-
-    star.style.cssText = `
-      width: ${finalSize}px;
-      height: ${finalSize}px;
-      left: ${x}%;
-      top: ${y}%;
-      --duration: ${duration}s;
-      --delay: -${delay}s;
-      --max-opacity: ${isBright ? 0.9 : maxOpacity};
-      box-shadow: 0 0 ${isBright ? 4 : 2}px rgba(255,255,255,${isBright ? 0.8 : 0.4});
-    `;
-    starField.appendChild(star);
-  }
-
-  // TAP RIPPLE — mobile only
-  if ('ontouchstart' in window) {
-    document.addEventListener('touchstart', (e) => {
-      const touch = e.touches[0];
-      const ripple = document.createElement('div');
-      ripple.classList.add('ripple');
-      ripple.style.left = touch.clientX + 'px';
-      ripple.style.top = touch.clientY + 'px';
-      document.body.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 500);
-    }, { passive: true });
-  }
-
-  // CURSOR STAR TRAIL
-  const colors = ['#1cd6e7', '#f62bd1', '#8051c8', '#f4a749', '#ffffff'];
-
-  document.addEventListener('mousemove', (e) => {
-    if (Math.random() > 0.4) return; // spawn stars on ~60% of moves for performance
-    createStar(e.clientX, e.clientY);
-  });
-
-  function createStar(x, y) {
-    const star = document.createElement('div');
-    const size = Math.random() * 5 + 2;
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const angle = Math.random() * 360;
-    const drift = (Math.random() - 0.5) * 40;
-    const duration = Math.random() * 600 + 400;
-
-    star.style.cssText = `
-      position: fixed;
-      left: ${x}px;
-      top: ${y}px;
-      width: ${size}px;
-      height: ${size}px;
-      border-radius: 50%;
-      background: ${color};
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 ${size * 2}px ${color};
-      animation: starFade ${duration}ms ease-out forwards;
-    `;
-
-    document.body.appendChild(star);
-    setTimeout(() => star.remove(), duration);
-  }
-
-  // Occasionally spawn sparkle bursts (4-pointed star shape)
-  document.addEventListener('mousemove', (e) => {
-    if (Math.random() > 0.05) return;
-    createSparkle(e.clientX, e.clientY);
-  });
-
-  function createSparkle(x, y) {
-    const sparkle = document.createElement('div');
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const size = Math.random() * 10 + 6;
-
-    sparkle.innerHTML = `✦`;
-    sparkle.style.cssText = `
-      position: fixed;
-      left: ${x}px;
-      top: ${y}px;
-      color: ${color};
-      font-size: ${size}px;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      text-shadow: 0 0 6px ${color};
-      animation: sparkleFade 700ms ease-out forwards;
-    `;
-
-    document.body.appendChild(sparkle);
-    setTimeout(() => sparkle.remove(), 700);
-  }
-</script>
-
-<style>
-  .gradient-word {
-    font-style: italic;
-    background: linear-gradient(135deg, #1cd6e7, #b893f2, #f62bd1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: inline;
-  }
-
-  /* TWINKLING STARS */
+  /* =====================================================
+     STARS + ANIMATIONS
+  ===================================================== */
   .star-field {
     position: fixed;
     inset: 0;
@@ -1077,4 +675,295 @@
     0%   { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
     100% { opacity: 0; transform: translate(-50%, calc(-50% - 25px)) scale(0.3) rotate(45deg); }
   }
+
+  /* TAP RIPPLE */
+  .ripple {
+    position: fixed;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%) scale(0);
+    background: radial-gradient(circle, rgba(28,214,231,0.35) 0%, transparent 70%);
+    animation: tapRipple 0.5s ease-out forwards;
+  }
+
+  @keyframes tapRipple {
+    0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .intention-block { padding: 24px 20px; }
+    .container { padding: 0 16px; }
+    .step-title { font-size: 26px; }
+    .reflection-card-header { padding: 16px; }
+    .reflection-textarea { padding: 16px; min-height: 140px; }
+    .nav-btn { padding: 10px 16px; font-size: 10px; }
+    .somatic-block { padding: 22px 16px; }
+  }
 </style>
+</head>
+<body>
+
+<div class="mid-glow"></div>
+<div class="star-field" id="starField"></div>
+
+<!-- INTENTION BLOCK — full width at top -->
+<div class="intention-block">
+  <div class="intention-eyebrow">Selection Phase · Step 1 of 7</div>
+  <div class="intention-text">I am willing to see my current reality clearly, without judgment, so I can choose what comes next.</div>
+  <div class="intention-sub">Set this intention before you begin</div>
+</div>
+
+<div class="container">
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-wrap">
+    <div class="progress-meta">
+      <div class="progress-label">Selection Phase</div>
+      <div class="progress-count">Step 1 of 7</div>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- STEP HEADER -->
+  <div class="step-header">
+    <div class="step-eyebrow">
+      <span class="step-badge">STEP 1</span>
+      <span class="step-phase-label">SELECTION PHASE</span>
+    </div>
+    <div class="step-title">Observe Your <em class="gradient-word">Current</em> Reality</div>
+    <div class="step-subtitle">See where you are before you choose where you are going.</div>
+  </div>
+
+  <!-- TEACHING COPY — CANONICAL FIX: label always present -->
+  <div class="teaching-section">
+    <div class="section-label">The Teaching</div>
+    <div class="teaching-copy">
+      <p>Before you can move into the reality you want, you need to get clear on the one you are currently in. Observation is where this begins. When you look honestly at your life right now, you can start to identify what is working and worth carrying forward, and what you are ready to leave behind.</p>
+      <p>The key to this step is neutrality. This is not an exercise in shame or regret. Think of yourself as stepping slightly outside your own life and taking a clear-eyed inventory, the way you would declutter a room. There is a keep pile and there is a release pile, and you approach both without drama.</p>
+
+      <!-- AMBER CALLOUT — preserved exactly -->
+      <div class="callout">
+        <strong>Remember:</strong> Emotional charge anchors you to a timeline. Neutrality is what creates the space to change. The more matter-of-fact you can be here, the more freedom you give yourself to move forward.
+      </div>
+
+      <p>Two phrases will guide your reflection in this step. For what you are releasing: <strong style="color:#a8f4f9">"I am no longer available for the timeline where I have been..."</strong> For what you are keeping and expanding: <strong style="color:#a8f4f9">"I am so grateful that I..."</strong> Use these as your anchors as you write.</p>
+      <p>If you feel stuck on the gratitude side, get specific and small. Clean water. A roof. A vehicle. Someone who loves you. Gratitude does not need to be grand to be real, and even the smallest acknowledgment of what is already good creates the energetic foundation for more.</p>
+    </div>
+  </div>
+
+  <!-- SOMATIC GROUNDING — animated breathing circle preserved -->
+  <div class="somatic-block">
+    <div class="somatic-icon"><div class="somatic-icon-inner"></div></div>
+    <div class="somatic-label">Before You Write</div>
+    <div class="somatic-text">Take three slow breaths. Feel the weight of your body in your seat and your feet making contact with the floor. Let your shoulders drop. When you feel settled and present, move into the reflection below.</div>
+  </div>
+
+  <!-- REFLECTION — CANONICAL FIX: "Your Reflection" label always present -->
+  <div class="section-label">Your Reflection</div>
+
+  <div class="step-nav-header">
+    <div class="step-dots">
+      <div class="step-dot active" onclick="goToSection(0)"></div>
+      <div class="step-dot" onclick="goToSection(1)"></div>
+    </div>
+    <div class="section-counter" id="sectionCounter">Part 1 of 2</div>
+  </div>
+
+  <!-- REFLECTION CARD 1 -->
+  <div class="reflection-card active" id="card-0">
+    <div class="reflection-card-header">
+      <div class="reflection-type">Release</div>
+      <div class="reflection-prompt">I am no longer available for the timeline where I have been...</div>
+      <div class="reflection-hint">What don't you like about your current trajectory?</div>
+    </div>
+    <textarea class="reflection-textarea" id="response-0" placeholder="I am no longer available for the timeline where I have been..."></textarea>
+  </div>
+
+  <!-- REFLECTION CARD 2 -->
+  <div class="reflection-card" id="card-1">
+    <div class="reflection-card-header">
+      <div class="reflection-type">Gratitude</div>
+      <div class="reflection-prompt">I am so grateful that I...</div>
+      <div class="reflection-hint">List what is already good in your life, big or small. These are the things you want to carry forward and allow to grow. Be specific.</div>
+    </div>
+    <textarea class="reflection-textarea" id="response-1" placeholder="I am so grateful that I..."></textarea>
+  </div>
+
+  <!-- NAV BUTTONS — Back + Next Part only -->
+  <div class="nav-buttons">
+    <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>Back</button>
+    <button class="nav-btn primary" id="nextBtn" onclick="navigate(1)">Next Part</button>
+  </div>
+
+  <!-- COPY MY RESPONSES — own row, feedback sits directly beneath -->
+  <div id="copyWrap" style="display:none; margin-top:18px;">
+    <button class="nav-btn primary" id="copyBtn" onclick="copyResponses()">Copy My Responses</button>
+    <div class="copy-feedback-inline" id="copyFeedback">✓ Copied to clipboard</div>
+  </div>
+
+  <!-- SAVE YOUR WORK CARD — no button inside -->
+  <div class="export-section">
+    <div class="export-title">Save Your Work</div>
+    <div class="export-sub">Your responses are not saved automatically. Use the Copy My Responses button above to copy them, then paste into your notes app on your phone or computer.</div>
+  </div>
+
+  <!-- CANONICAL FIX: footer button stack — Go to Next Step on top -->
+  <div class="footer-stack">
+    <a href="https://ceydaseren.github.io/timelinejumpingstep2/" class="next-step-btn">Go to Next Step</a>
+    <a href="https://www.skool.com/timeline-jumpers-9976/classroom" class="skool-btn">Take Me Back to Skool</a>
+  </div>
+
+  <div class="copyright">© 2026 Ceyda Seren. All rights reserved.</div>
+
+</div><!-- /container -->
+
+<script>
+  const totalSections = 2;
+  let current = 0;
+  const completed = new Set();
+
+  function goToSection(index) {
+    if (index < 0 || index >= totalSections) return;
+    const currentTA = document.getElementById('response-' + current);
+    if (currentTA && currentTA.value.trim().length > 0) completed.add(current);
+    document.getElementById('card-' + current).classList.remove('active');
+    current = index;
+    document.getElementById('card-' + current).classList.add('active');
+    updateUI();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function navigate(dir) { goToSection(current + dir); }
+
+  function updateUI() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const counter = document.getElementById('sectionCounter');
+    const dots = document.querySelectorAll('.step-dot');
+
+    prevBtn.disabled = current === 0;
+    counter.textContent = 'Part ' + (current + 1) + ' of ' + totalSections;
+
+    dots.forEach((dot, i) => {
+      dot.classList.remove('active', 'done');
+      if (i === current) dot.classList.add('active');
+      else if (completed.has(i)) dot.classList.add('done');
+    });
+
+    // Update progress fill based on completion
+    const pct = (completed.size / totalSections * 100);
+    document.getElementById('progressFill').style.width = Math.max(14.28, pct) + '%';
+
+    const copyWrap = document.getElementById('copyWrap');
+    if (current === totalSections - 1) {
+      nextBtn.style.display = 'none';
+      copyWrap.style.display = 'block';
+    } else {
+      nextBtn.style.display = '';
+      copyWrap.style.display = 'none';
+    }
+  }
+
+  function copyResponses() {
+    const labels = [
+      'RELEASE — I am no longer available for the timeline where I have been...',
+      'GRATITUDE — I am so grateful that I...'
+    ];
+    let text = 'TIMELINE JUMPERS — Step 1: Observe Your Current Reality\n';
+    text += '='.repeat(55) + '\n\n';
+    for (let i = 0; i < totalSections; i++) {
+      const val = document.getElementById('response-' + i)?.value?.trim();
+      text += labels[i] + '\n\n' + (val || '(no response entered)') + '\n\n' + '-'.repeat(40) + '\n\n';
+    }
+
+    const fb = document.getElementById('copyFeedback');
+    const show = () => { fb.classList.add('show'); setTimeout(() => fb.classList.remove('show'), 2500); };
+
+    navigator.clipboard.writeText(text).then(show).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      show();
+    });
+  }
+
+  /* TWINKLING STARS */
+  const starField = document.getElementById('starField');
+  for (let i = 0; i < 120; i++) {
+    const star = document.createElement('div');
+    star.classList.add('twinkle-star');
+    const size = Math.random() * 2 + 0.5;
+    const isBright = Math.random() > 0.88;
+    const finalSize = isBright ? size * 2.5 : size;
+    star.style.cssText = `
+      width:${finalSize}px; height:${finalSize}px;
+      left:${Math.random()*100}%; top:${Math.random()*100}%;
+      --duration:${(Math.random()*4+2).toFixed(2)}s;
+      --delay:-${(Math.random()*6).toFixed(2)}s;
+      --max-opacity:${isBright ? 0.9 : (Math.random()*0.5+0.2).toFixed(2)};
+      box-shadow:0 0 ${isBright ? 4 : 2}px rgba(255,255,255,${isBright ? 0.8 : 0.4});
+    `;
+    starField.appendChild(star);
+  }
+
+  /* TAP RIPPLE — mobile */
+  if ('ontouchstart' in window) {
+    document.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      const ripple = document.createElement('div');
+      ripple.classList.add('ripple');
+      ripple.style.left = touch.clientX + 'px';
+      ripple.style.top = touch.clientY + 'px';
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 500);
+    }, { passive: true });
+  }
+
+  /* CURSOR STAR TRAIL — desktop */
+  const trailColors = ['#1cd6e7', '#f62bd1', '#8051c8', '#f4a749', '#ffffff'];
+
+  document.addEventListener('mousemove', (e) => {
+    if (Math.random() > 0.4) return;
+    const star = document.createElement('div');
+    const size = Math.random() * 5 + 2;
+    const color = trailColors[Math.floor(Math.random() * trailColors.length)];
+    const duration = Math.random() * 600 + 400;
+    star.style.cssText = `
+      position:fixed; left:${e.clientX}px; top:${e.clientY}px;
+      width:${size}px; height:${size}px; border-radius:50%;
+      background:${color}; pointer-events:none; z-index:9999;
+      transform:translate(-50%,-50%);
+      box-shadow:0 0 ${size*2}px ${color};
+      animation:starFade ${duration}ms ease-out forwards;
+    `;
+    document.body.appendChild(star);
+    setTimeout(() => star.remove(), duration);
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (Math.random() > 0.05) return;
+    const sparkle = document.createElement('div');
+    const color = trailColors[Math.floor(Math.random() * trailColors.length)];
+    const size = Math.random() * 10 + 6;
+    sparkle.innerHTML = '✦';
+    sparkle.style.cssText = `
+      position:fixed; left:${e.clientX}px; top:${e.clientY}px;
+      color:${color}; font-size:${size}px;
+      pointer-events:none; z-index:9999;
+      transform:translate(-50%,-50%);
+      text-shadow:0 0 6px ${color};
+      animation:sparkleFade 700ms ease-out forwards;
+    `;
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 700);
+  });
+</script>
+</body>
+</html>
