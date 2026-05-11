@@ -44,9 +44,10 @@
   body::before {
     content: '';
     position: fixed;
-    top: -200px; left: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(28,214,231,0.07) 0%, transparent 65%);
+    top: -150px; left: -150px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(28,214,231,0.22) 0%, transparent 65%);
+    filter: blur(130px);
     pointer-events: none;
     z-index: 0;
   }
@@ -54,18 +55,20 @@
   body::after {
     content: '';
     position: fixed;
-    bottom: -200px; right: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(246,43,209,0.07) 0%, transparent 65%);
+    bottom: -150px; right: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(246,43,209,0.18) 0%, transparent 65%);
+    filter: blur(130px);
     pointer-events: none;
     z-index: 0;
   }
 
   .mid-glow {
     position: fixed;
-    top: 40%; left: 50%; transform: translate(-50%, -50%);
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(128,81,200,0.05) 0%, transparent 65%);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(128,81,200,0.18) 0%, transparent 65%);
+    filter: blur(130px);
     pointer-events: none;
     z-index: 0;
   }
@@ -648,18 +651,44 @@
 
   .export-btn.filled:hover { opacity: 0.85; }
 
-  .copy-feedback {
+  .skool-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--gradient);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: opacity 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .skool-btn:hover { opacity: 0.85; }
+
+  .copy-feedback-inline {
+    text-align: center;
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     color: var(--cyan);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     font-weight: 600;
     opacity: 0;
     transition: opacity 0.3s;
-    align-self: center;
+    margin-top: 10px;
+    min-height: 18px;
+    position: relative;
+    z-index: 1;
   }
 
-  .copy-feedback.show { opacity: 1; }
+  .copy-feedback-inline.show { opacity: 1; }
 
   .copyright {
     text-align: center;
@@ -669,6 +698,24 @@
     letter-spacing: 0.06em;
     margin-top: 40px;
     padding-bottom: 20px;
+  }
+
+  /* TAP RIPPLE — mobile touch feedback */
+  .ripple {
+    position: fixed;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%) scale(0);
+    background: radial-gradient(circle, rgba(28,214,231,0.35) 0%, transparent 70%);
+    animation: tapRipple 0.5s ease-out forwards;
+  }
+
+  @keyframes tapRipple {
+    0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
   }
 
   @media (max-width: 600px) {
@@ -785,20 +832,19 @@
   <div class="nav-buttons">
     <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>Back</button>
     <button class="nav-btn primary" id="nextBtn" onclick="navigate(1)">Next Part</button>
-    <div class="complete-badge" id="completeBadge"><span>✓</span> Step Complete</div>
+    <button class="nav-btn primary" id="copyBtn" style="display:none;" onclick="copyResponses()">Copy My Responses</button>
   </div>
 
-  <!-- EXPORT SECTION -->
+  <div class="copy-feedback-inline" id="copyFeedback">Copied to clipboard</div>
+
+  <!-- SAVE YOUR WORK CARD -->
   <div class="export-section">
     <div class="export-title">Save Your Work</div>
-    <div class="export-sub">Your responses are not saved automatically. Click below to copy them, then paste into your notes app on your phone or computer.</div>
-    <div class="export-buttons">
-      <button class="export-btn filled" onclick="copyResponses()">
-        <span>⬇</span> Copy My Responses
-      </button>
-      <div class="copy-feedback" id="copyFeedback">Copied to clipboard</div>
-    </div>
+    <div class="export-sub">Your responses are not saved automatically. Copy them, then paste into your notes app on your phone or computer.</div>
   </div>
+
+  <!-- SKOOL BUTTON -->
+  <a href="https://www.skool.com/timeline-jumpers-9976/classroom/2a4e0ab5?md=6bde64945d8f42c4ae0744be8b3ef172" target="_blank" class="skool-btn">Take Me Back to Skool</a>
 
   <!-- COPYRIGHT -->
   <div class="copyright">© 2026 Ceyda Seren. All rights reserved.</div>
@@ -825,8 +871,8 @@
   function updateUI() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const copyBtn = document.getElementById('copyBtn');
     const counter = document.getElementById('sectionCounter');
-    const badge = document.getElementById('completeBadge');
     const dots = document.querySelectorAll('.step-dot');
 
     prevBtn.disabled = current === 0;
@@ -839,30 +885,14 @@
     });
 
     if (current === totalSections - 1) {
-      nextBtn.textContent = 'Done';
-      nextBtn.style.display = '';
-      nextBtn.onclick = markComplete;
+      nextBtn.style.display = 'none';
+      copyBtn.style.display = '';
     } else {
       nextBtn.textContent = 'Next Part';
       nextBtn.style.display = '';
       nextBtn.onclick = () => navigate(1);
+      copyBtn.style.display = 'none';
     }
-
-    if (completed.size === totalSections) {
-      nextBtn.style.display = 'none';
-      badge.classList.add('show');
-    }
-  }
-
-  function markComplete() {
-    const currentTA = document.getElementById('response-' + current);
-    if (currentTA && currentTA.value.trim().length > 0) completed.add(current);
-    const dots = document.querySelectorAll('.step-dot');
-    dots.forEach((dot, i) => { if (completed.has(i)) dot.classList.add('done'); });
-    const nextBtn = document.getElementById('nextBtn');
-    const badge = document.getElementById('completeBadge');
-    nextBtn.style.display = 'none';
-    badge.classList.add('show');
   }
 
   function copyResponses() {
@@ -881,8 +911,9 @@
 
     if (text.length < 100) text += '(No responses recorded yet)';
 
+    const fb = document.getElementById('copyFeedback');
+
     navigator.clipboard.writeText(text).then(() => {
-      const fb = document.getElementById('copyFeedback');
       fb.classList.add('show');
       setTimeout(() => fb.classList.remove('show'), 2500);
     }).catch(() => {
@@ -892,7 +923,6 @@
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      const fb = document.getElementById('copyFeedback');
       fb.classList.add('show');
       setTimeout(() => fb.classList.remove('show'), 2500);
     });
@@ -926,6 +956,19 @@
       box-shadow: 0 0 ${isBright ? 4 : 2}px rgba(255,255,255,${isBright ? 0.8 : 0.4});
     `;
     starField.appendChild(star);
+  }
+
+  // TAP RIPPLE — mobile only
+  if ('ontouchstart' in window) {
+    document.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      const ripple = document.createElement('div');
+      ripple.classList.add('ripple');
+      ripple.style.left = touch.clientX + 'px';
+      ripple.style.top = touch.clientY + 'px';
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 500);
+    }, { passive: true });
   }
 
   // CURSOR STAR TRAIL
